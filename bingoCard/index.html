@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Bingo卷</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://use.edgefonts.net/passion-one.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="mainController">
+	<div ng-repeat="i in [1,2,3,4]" class="Zoom">
+		<h4 class="BingoHeader">BINGO!</h4>
+		<div ng-repeat="table in [1,2,3]" class="TableZoom">
+			<p ng-if="table != 3" class="title">第{{table}}回合</p>
+			<p ng-if="table == 3" class="title">Bonus 回合</p>
+			<div class="clearfix BingoTable">
+				<div ng-repeat="num in numbers | orderBy:random" class="number">{{num}}</div>
+			</div>
+			<hr ng-if="(table != 3)">
+		</div>
+	</div>
+</body>
+</html>

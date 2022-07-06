@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+  <meta charset="utf-8">
+  <title>THE BINGO</title>
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="js/loader.min.js" async="async" defer="defer"></script>
+  <script src="js/clipboard.min.js"></script>
+  <script src="js/gtag.js"></script>
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79005714-5"></script>-->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-79005714-5');
+  </script>
+
+</head>
+<body>
+<script src="js/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/semantic.min.js"></script>
+<script src="js/firebase.js"></script>
+
+<!-- loader -->
+<div class="ui dimmer" id="dimmer">
+  <div class="ui massive text loader">
+    <h3>Loading</h3>
+  </div>
+</div>
+
+<container id="app">
+  <header>
+    <h3 class="header item" id='top'>索朗科技有限公司尾牙賓果開獎</h3>
+  </header>
+
+  <div  style="margin-top: 2em!important;">
+    <div class="panel" id="panel1">{{panel1}}</div>
+    <div class="panel" id="panel10">{{panel10}}</div>
+  </div>
+
+  <div v-if="stopButton">
+    <div class="ui centered grid">
+      <div class="five wide tablet computer  center aligned padded column">
+        <button id="spinButton" v-model="spinButton" class="ui fluid red button" v-on:click="runSlot()">點擊開獎</button>
+      </div>
+    </div>
+  </div>
+
+  <div v-else>
+    <div class="ui centered grid">
+      <div class="five wide tablet computer  center aligned padded column">
+        <button id="spinButton" v-model="spinButton" class="ui fluid blue button" v-on:click="runStop()">停止</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui pointing red basic label enterMSG" style="font-size: 1.3rem;">
+    點擊『ENTER』開出號碼！
+  </div>
+  <div class="ui centered grid">
+    <div class="fourteen wide tablet computer  center aligned padded column">
+      <div class="container">
+        <div class="bingo" v-for="item in items">
+          <span class="bingoNum" v-bind:style="pStyle" v-bind:id="item">
+            {{ item }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui centered grid">
+    <!--<div class="two wide tablet computer center aligned padded column">-->
+      <!--<button class="ui fluid blue button" v-on:click="bingoReset()">RESTART</button>-->
+    <!--</div>-->
+    <div class="five wide tablet computer center aligned padded column">
+      <button class="ui fluid orange button" v-on:click="allReset()">重置BINGO</button>
+    </div>
+  </div>
+  <footer>
+    <p style="margin-bottom: 1em;">
+      <small>Copyright © 2018 by Wayne</small>
+    </p>
+  </footer>
+</container>
+</body>
+<audio id="audio_drum" src="audio/drumroll.wav"></audio>
+<audio id="audio_cymbal" src="audio/cymbal.wav"></audio>
+<script type="text/javascript" src="js/bingo.bundle.js"></script>
+</html>

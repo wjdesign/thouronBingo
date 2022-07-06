@@ -1,0 +1,80 @@
+@charset "UTF-8";
+* {
+	font-family: "微軟正黑體",Arial;
+}
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+    text-align: center;
+}
+.Zoom {
+    width: 24%;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border: 1px dashed #999;
+    border-radius: 20px;
+}
+.BingoHeader {
+	text-align: center;
+    background: #1fcecb;
+    color: #eceabe;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-family: "passion-one", sans-serif;
+    padding: 10px 0;
+}
+.StartRandom {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.TableZoom {
+    margin-bottom: 20px;
+}
+.TableZoom .title {
+    padding: 10px 0;
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 18px;
+
+}
+.BingoTable {
+    width: 100%;
+    box-sizing: border-box;
+}
+.BingoTable .number {
+	width: 20%;
+    float: left;
+    text-align: center;
+    border: 1px dashed #999;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+.BingoTable .number:nth-child(1) {
+    border-top-left-radius: 20px;
+}
+.BingoTable .number:nth-child(5) {
+    border-top-right-radius: 20px;
+}
+.BingoTable .number:nth-child(21) {
+    border-bottom-left-radius: 20px;
+}
+.BingoTable .number:nth-child(25) {
+    border-bottom-right-radius: 20px;
+}
+.TableZoom hr {
+	margin-top: 30px;
+    text-decoration: dashed;
+    border: 0;
+    border-top: 1px dashed #999;
+}
